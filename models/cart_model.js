@@ -1,5 +1,6 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose')
 const { Schema } = mongoose;
+const { Box } = require('./box_model')
 
 const cartSchema = new Schema(
   {
@@ -31,6 +32,11 @@ const cartSchema = new Schema(
           return 0;
         });
       },
+      addItem(id){
+        const item = Box.findById(id)
+        if(item) this.boxes.push(item) 
+        return {error: "this items doesn't exist"}
+      }
     },
   },
 );
