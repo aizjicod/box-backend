@@ -4,21 +4,14 @@ const { Schema } = mongoose;
 const userSchema = new Schema(
   {
     name: {
-      first: { type: String, required: true },
-      last: { type: String, required: true },
+      first: { type: String, required: true, trim: true },
+      last: { type: String, required: true, trim: true },
     },
+    user_name: {type: String, required: true, unique: true, trim: true},
     age: { type: Number, required: true, min: 18 },
-    /*
-    ** passport, ci country, number, icon and email  will be left here for future implementations
-    ** passport: { type: String, required: false, unique: true },
-    ** CI: { type: String, required: false, unique: true },
-    ** email: { type: String, required: true },
-    ** country: { type: String, required: true, unique: true },
-    ** number: { type: Number, required: true, unique: true },
-    ** icon: { type: String, required: false, default: 'asdasd' },
-    */
     role: { type: String, default: 'user' },
-    cart: { type: Schema.Types.ObjectId, ref: "Cart" }
+    // cart_id: { type: Schema.Types.ObjectId, ref: "Cart" },
+    // contact_id: { type: Schema.Types.ObjectId, ref: "Contact_information" },
   },
   {
     methods: {
