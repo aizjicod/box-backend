@@ -9,6 +9,7 @@ const userSchema = new Schema(
     },
     user_name: {type: String, required: true, unique: true, trim: true},
     age: { type: Number, required: true, min: 18 },
+    icon: { type: String, default: 'add default icon' },
     role: { type: String, default: 'user' },
     cart_id: { type: Schema.Types.ObjectId, ref: "Cart" },
     contact_id: { type: Schema.Types.ObjectId, ref: "Contact_information" },
