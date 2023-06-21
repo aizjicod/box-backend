@@ -1,4 +1,3 @@
-const  mongoose  = require('mongoose');
 var userModel = require('../../models/user_model');
 const { assert } = require('chai');
 describe('User model validations', function () {
@@ -73,6 +72,6 @@ describe('User model validations', function () {
       const u = new userModel({...newUser, role: 'admin'})
         u.validate()
         .then(done)
-        .catch()
+        .catch(err => console.log(err))
     });
 });
