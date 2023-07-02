@@ -7,17 +7,11 @@ const cartSchema = new Schema(
     boxes: [{
       type: Schema.Types.ObjectId,
       ref: "Box"
-
-      // this is the structure for complex implementation
-      // added: {
-      //   type: [Schema.Types.ObjectId], 
-      //   ref: "Item"
-      // },
-      // bought: {
-      //   type: [Schema.Types.ObjectId], 
-      //   ref: "Item"
-      // }
     }],
+    user_id: {
+      type: Schema.Types.ObjectId,
+      ref: "User"
+    }
   },
   {
     methods: {
