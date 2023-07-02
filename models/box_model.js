@@ -3,11 +3,9 @@ const { Schema } = mongoose;
 
 const boxSchema = new Schema(
   {
-    title: {
-      type: String,
-      required: true
-    },
-  },
+   totalWeigh: {type: Number, required: true, min: 1},
+   items_id: [{ type: Schema.Types.ObjectId, ref: "Contact_information" }],
+  }
 );
-const Box = mongoose.model('Box', boxSchema);
-module.exports = { Box, boxSchema };
+const boxModel = mongoose.model('Box', boxSchema);
+module.exports = boxModel;
