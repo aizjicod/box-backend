@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var userModel = require('../models/user_model');
+var { userModel } = require('../models/user_model');
 var {contactInformationModel} = require('../models/contact_information_model');
-var cartModel = require('../models/cart_model');
+var { cartModel } = require('../models/cart_model');
 
 
 /* GET users listing. */

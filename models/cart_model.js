@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose;
-const { userSchema } = require('./user_model')
 const { boxSchema } = require('./box_model')
 
 const cartSchema = new Schema(
