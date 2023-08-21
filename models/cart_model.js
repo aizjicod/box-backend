@@ -1,17 +1,11 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose;
-const { Box } = require('./box_model')
+const { userSchema } = require('./user_model')
+const { boxSchema } = require('./box_model')
 
 const cartSchema = new Schema(
   {
-    boxes: [{
-      type: Schema.Types.ObjectId,
-      ref: "Box"
-    }],
-    user_id: {
-      type: Schema.Types.ObjectId,
-      ref: "User"
-    }
+    boxes: [ boxSchema ],
   },
   {
     methods: {
@@ -35,4 +29,7 @@ const cartSchema = new Schema(
   },
 );
 const cartModel = mongoose.model('Cart', cartSchema);
-module.exports = cartModel;
+module.exports = {
+  cartModel,
+  cartSchema
+};

@@ -1,4 +1,4 @@
-var userModel = require('../../models/user_model');
+var { userModel } = require('../../models/user_model');
 const { assert } = require('chai');
 describe('User model validations', function () {
     let newUser = {

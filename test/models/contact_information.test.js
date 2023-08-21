@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-var contactInformationModel = require('../../models/contact_information_model');
+var { contactInformationModel } = require('../../models/contact_information_model');
 describe('contact information model validations', function () {
     let newContactInformation = {
       telephone_n: '+58 4122458954',

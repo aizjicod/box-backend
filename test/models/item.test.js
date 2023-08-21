@@ -1,4 +1,4 @@
-var itemModel = require('../../models/item_model');
+var { itemModel } = require('../../models/item_model');
 const { assert } = require('chai');
 describe('Item model validations', function () {
     let newItem = {

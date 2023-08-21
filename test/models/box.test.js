@@ -1,4 +1,4 @@
-var boxModel = require('../../models/box_model');
+var { boxModel } = require('../../models/box_model');
 const { assert } = require('chai');
 describe('box model validations', function () {
     let newBox = {

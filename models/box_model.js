@@ -1,11 +1,15 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const { itemSchema } = require('./item_model');
 const { Schema } = mongoose;
 
 const boxSchema = new Schema(
   {
    totalWeigh: {type: Number, required: true, min: 1},
-   items_id: [{ type: Schema.Types.ObjectId, ref: "Contact_information" }],
+   items_id: [ itemSchema ],
   }
 );
 const boxModel = mongoose.model('Box', boxSchema);
-module.exports = boxModel;
+module.exports = {
+  boxModel,
+  boxSchema
+};
