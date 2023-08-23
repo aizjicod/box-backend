@@ -11,7 +11,7 @@ const contactInformationSchema = new Schema(
     timestamps: false
   }
 );
-const contactInformationModel = mongoose.model('Contact_information', contactInformationSchema);
+const contactInformationModel = mongoose.model('Contact', contactInformationSchema);
 module.exports = {
   contactInformationModel,
   contactInformationSchema

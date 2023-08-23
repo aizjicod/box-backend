@@ -36,12 +36,15 @@ router.post('/new', async (req, res, next) => {
 })
 
 router.get('/:id', async (req, res, next) => {
-  const user = await userModel
-  .findById(req.params.id)
-  // .populate('contact_information')
-  .populate('cart')
-  console.log(user)
-  res.status(200).json(user)
+  try{
+    const user = await userModel
+    .findById(req.params.id)
+    .populate('contact')
+    .populate('cart')
+    res.status(200).json(user)
+  }catch (error){
+    res.status(404).json(error.message)
+  }
 })
 
 module.exports = router;

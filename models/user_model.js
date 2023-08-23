@@ -12,7 +12,7 @@ const userSchema = new Schema(
     icon: { type: String, default: 'add default icon' },
     role: { type: String, default: 'user' },
     cart: { type: Schema.Types.ObjectId, ref: 'Cart' },
-    contact: { type: Schema.Types.ObjectId, ref: 'Contact_information' },
+    contact: { type: Schema.Types.ObjectId, ref: 'Contact' },
   },
   {
     methods: {
