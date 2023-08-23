@@ -1,7 +1,5 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose;
-const { cartSchema } = require('./cart_model')
-const { contactInformationSchema } = require('./contact_information_model')
 
 const userSchema = new Schema(
   {
@@ -13,8 +11,8 @@ const userSchema = new Schema(
     age: { type: Number, required: true, min: 18 },
     icon: { type: String, default: 'add default icon' },
     role: { type: String, default: 'user' },
-    cart: cartSchema,
-    contact: contactInformationSchema,
+    cart: { type: Schema.Types.ObjectId, ref: 'Cart' },
+    contact: { type: Schema.Types.ObjectId, ref: 'Contact_information' },
   },
   {
     methods: {

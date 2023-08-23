@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose;
-const { boxSchema } = require('./box_model')
 
 const cartSchema = new Schema(
   {
-    boxes: [ boxSchema ],
+    not_bought: [{ type: Schema.Types.ObjectId, ref: 'Boxes' }],
+    total: {type: Number, default: 0}
   },
   {
     methods: {
