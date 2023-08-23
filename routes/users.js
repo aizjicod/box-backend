@@ -39,11 +39,17 @@ router.get('/:id', async (req, res, next) => {
   try{
     const user = await userModel
     .findById(req.params.id)
-    .populate('contact')
-    .populate('cart')
+    .populate({
+      path: 'contact',
+      select: 'telephone_n email city'
+    })
+    .populate({
+      path: 'cart',
+      select: 'total'
+    })
     res.status(200).json(user)
   }catch (error){
-    res.status(404).json(error.message)
+    res.status(404).json('User not found or invalid')
   }
 })
 
